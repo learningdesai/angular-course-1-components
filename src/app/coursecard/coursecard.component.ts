@@ -32,4 +32,9 @@ export class CoursecardComponent implements OnInit {
     //   'beginner':this.course.category=='BEGINNER', 
     // };
   }
+  cardStyle(){
+    return {
+      'text-decoration':'underline'
+    }
+  }
 }
