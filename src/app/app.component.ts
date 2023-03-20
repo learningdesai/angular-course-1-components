@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {COURSES} from '../db-data';
+import { Course } from './model/course';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,7 @@ ngrxCourse=COURSES[2]
 onCourseClick(){
   console.log("App Component ..Click Event");
 }
-
+onCourseSelected(course:Course){
+  console.log("App Component ..onCourseSelected Custom Event",course);
+}
 }
