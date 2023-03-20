@@ -1,7 +1,7 @@
 
-<div class="courses">
+<ng-container *ngIf="course">
 
-    <div class="coursecard" *ngIf="course"
+    <div class="coursecard" 
     [ngClass]="cardClass()">
 
         <div class="course-title">
@@ -15,13 +15,17 @@
         <div class="course-description">
             {{course.longDescription}}
         </div>
-        <div class="course-category" [ngSwitch]="course.category">
-            <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
+        <ng-container [ngSwitch]="course.category">
+        <div class="course-category" >
+            <ng-container *ngSwitchCase="'BEGINNER'">
+            <div class="category" >Beginner</div>
+        </ng-container>
             <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
             <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
             <div class="category" *ngSwitchCase>All Levels</div>
         </div>
+       </ng-container>
         <button (click)="onCourseViewed()">View Course</button>
     </div>
 
-</div>
+</ng-container>
