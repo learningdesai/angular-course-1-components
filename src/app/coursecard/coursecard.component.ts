@@ -11,14 +11,14 @@ export class CoursecardComponent implements OnInit {
 
   @Input()
   course:Course;
-  @Output()
-  courseSelected = new EventEmitter<Course>();
+  @Output('courseSelected')
+  courseEmitter = new EventEmitter<Course>();
 
   ngOnInit(): void {
     
   }
   onCourseViewed(){
     console.log("Course Component... Click event..")
-    this.courseSelected.emit(this.course);
+    this.courseEmitter.emit(this.course);
   }
 }
